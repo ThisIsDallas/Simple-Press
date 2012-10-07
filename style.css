@@ -1,0 +1,12 @@
+/*
+Theme Name: NspireLab Starter Theme
+Theme URI: http://nspirelab.com
+Description: A responsive HTML5 starter theme with an included options panel.
+Author: Dallas Bass
+Author URI: http://nspirelab.com
+Version: 1.0
+*/
+
+@import url('/css/styles.css');
+@import url('/css/layout.css');
+@import url('/css/base.css');
