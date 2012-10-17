@@ -92,16 +92,26 @@
 		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
 	
 	<!-- CSS: screen, mobile & print are all in the same file -->
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/styles.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/layout.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/base.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/flexslider.css">
+<?php
+
+	wp_enqueue_style( 'styleMain', get_template_directory_uri().'/style.css', '', '1.0' );
+	wp_enqueue_style( 'styles', get_template_directory_uri().'/css/styles.css', '', '1.0' );
+	wp_enqueue_style( 'layout', get_template_directory_uri().'/css/layout.css', '', '1.0' );
+	wp_enqueue_style( 'base', get_template_directory_uri().'/css/base.css', '', '1.0' );
+	wp_enqueue_style( 'flexslider', get_template_directory_uri().'/css/flexslider.css', '', '1.0' );
+
+?>
+
 	
 <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>	
-	<!-- all our JS is at the bottom of the page, except for Modernizr. 
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/modernizr-1.7.min.js"></script>-->
 	
+<?php
+
+	wp_enqueue_script( 'modernizr', get_template_directory_uri().'/_/js/modernizr-1.7.min.js' ); //modernizr will load in the header
+	wp_enqueue_script( 'functions', get_template_directory_uri().'/_/js/functions.js', array( 'jquery' ), '1.0', true ); //functions will load in the footer
+
+?>	
+
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
