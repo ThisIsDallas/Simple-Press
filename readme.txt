@@ -1,1 +1,1 @@
-wp-simple-press
+wp-simple-press - A work in progress
